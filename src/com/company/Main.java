@@ -78,7 +78,7 @@ public class Main {
     }
 
     public void printNthHarmonicNumber(int number) {
-        if(number<OFFSET_VALUE){
+        if (number < OFFSET_VALUE) {
             System.out.println("Invalid Number");
             return;
         }
@@ -139,7 +139,7 @@ public class Main {
     public void findPercentageOfHeadAndTailsOfNFlipCoins(int flipNumber) {
         if (flipNumber < OFFSET_VALUE) {
             System.out.println("Invalid Number");
-            return ;
+            return;
         }
         double[] headAndTailPercentage = new double[2];
         int count = flipNumber;
