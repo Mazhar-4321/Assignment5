@@ -95,7 +95,7 @@ public class Main {
             System.out.println("Invalid number");
             return;
         }
-        if ((number % FOUR == ZERO && number % CENTURY != ZERO) || (number % FOUR == ZERO && number % CENTURY == ZERO && number % FOUR_CENTURY == 0)) {
+        if ((number % FOUR == ZERO && number % CENTURY != ZERO) || (number % FOUR == ZERO && number % CENTURY == ZERO && number % FOUR_CENTURY == ZERO)) {
             System.out.println("Leap Year");
             return;
         }
@@ -105,7 +105,7 @@ public class Main {
     public void findPrimeFactors(int number) {
         int i = 1;
         while (i * i <= number) {
-            if (number % i == 0) {
+            if (number % i == ZERO) {
                 System.out.print(i + " ");
             }
             i += 1;
@@ -169,6 +169,6 @@ public class Main {
     }
 
     public void isEven(int num) {
-        System.out.println("Even=" + (num % 2 == 0 ? true : false));
+        System.out.println("Even=" + (num % 2 == ZERO ? true : false));
     }
 }
