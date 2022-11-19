@@ -137,13 +137,10 @@ public class Main {
     }
 
     public void findPercentageOfHeadAndTailsOfNFlipCoins(int flipNumber) {
-
-    public double[] findPercentageOfHeadAndTailsOfNFlipCoins(int flipNumber) {
         if (flipNumber < OFFSET_VALUE) {
             System.out.println("Invalid Number");
-            return null;
+            return ;
         }
-
         double[] headAndTailPercentage = new double[2];
         int count = flipNumber;
         while (flipNumber-- >= OFFSET_VALUE) {
