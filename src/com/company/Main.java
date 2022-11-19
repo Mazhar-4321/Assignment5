@@ -6,13 +6,14 @@ public class Main {
     final static int Q1 = 1;
     final static int Q3 = 3;
     final static int Q7 = 7;
+    final static int Q8 = 8;
     final int OFFSET_VALUE = 1;
     final int POWER_LIMIT = 30;
 
     public static void main(String[] args) {
         System.out.println("Basic Core Java Programs");
         Main main = new Main();
-        System.out.println("Enter 1 for Flip Coin ,3 for Power of 2 ,7 for swap two numbers  ");
+        System.out.println("Enter 1 for Flip Coin ,3 for Power of 2 ,7 for swap two numbers,8 for Even Or Odd  ");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option) {
@@ -28,6 +29,10 @@ public class Main {
                 int num1 = scanner.nextInt();
                 int num2 = scanner.nextInt();
                 main.swapTwoNumbers(num1, num2);
+                break;
+            case Q8:
+                int evenOrOdd = scanner.nextInt();
+                main.isEven(evenOrOdd);
                 break;
         }
     }
@@ -58,5 +63,9 @@ public class Main {
         num2 = num1 - num2;
         num1 = num1 - num2;
         System.out.println("After Swap num1=" + num1 + ",num2=" + num2);
+    }
+
+    public void isEven(int num) {
+        System.out.println("Even=" + (num % 2 == 0 ? true : false));
     }
 }
