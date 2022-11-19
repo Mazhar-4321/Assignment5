@@ -8,6 +8,7 @@ public class Main {
     final static int Q7 = 7;
     final static int Q8 = 8;
     final static int Q9 = 9;
+    final static int Q10 = 10;
     final int OFFSET_VALUE = 1;
     final int POWER_LIMIT = 30;
 
@@ -40,7 +41,18 @@ public class Main {
                 char alphabet = scanner.next().toLowerCase().charAt(0);
                 main.isAlphabetVowel(alphabet);
                 break;
+            case Q10:
+                int firstNumber = scanner.nextInt();
+                int secondNumber = scanner.nextInt();
+                int thirdNumber = scanner.nextInt();
+                main.findLargestAmongThreeNumbers(firstNumber, secondNumber, thirdNumber);
+
         }
+    }
+
+    public void findLargestAmongThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+        System.out.printf("Third Largest Number among %d,%dand %d is %d", firstNumber, secondNumber, thirdNumber, firstNumber >= secondNumber
+                && firstNumber >= thirdNumber ? firstNumber : (secondNumber >= thirdNumber ? secondNumber : thirdNumber));
     }
 
     public void isAlphabetVowel(char alphabet) {
