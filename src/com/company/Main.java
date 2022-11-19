@@ -147,7 +147,7 @@ public class Main {
             double randomNumber = Math.random();
             headAndTailPercentage[randomNumber > 0.5 ? 0 : 1] += 1;
         }
-        System.out.println("Head Percentage=" + headAndTailPercentage[0] / count + ",Tail Percentage=" + headAndTailPercentage[1] / count);
+        System.out.println("Head Percentage=" + (headAndTailPercentage[0] / count) + ",Tail Percentage=" + (headAndTailPercentage[1] / count));
     }
 
     public void printPowerOf2(int N) {
