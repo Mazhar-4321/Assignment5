@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Scanner;
 
 public class Main {
@@ -11,6 +12,12 @@ public class Main {
     final static int Q10 = 10;
     final static int Q6 = 6;
     final static int Q5 = 5;
+    final static int Q2 = 2;
+    final static int MIN_LEAP_YEAR_LIMIT = 1000;
+    final static int FOUR = 4;
+    final static int FOUR_CENTURY = 400;
+    final static int ZERO = 0;
+    final static int CENTURY = 100;
     final int OFFSET_VALUE = 1;
     final int POWER_LIMIT = 30;
 
@@ -18,7 +25,7 @@ public class Main {
         System.out.println("Basic Core Java Programs");
         Main main = new Main();
         System.out.println("Enter 1 for Flip Coin ,3 for Power of 2 ,7 for swap two numbers,8 for Even Or Odd ,9 for Alphabet is Vowel or Consonant" +
-                "10 for Largest Among Three Numbers,6 for Quotient And Remainder,5 for Prime factors ");
+                "10 for Largest Among Three Numbers,6 for Quotient And Remainder,5 for Prime factors 2 for Leap Year ");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option) {
@@ -57,8 +64,24 @@ public class Main {
                 number = scanner.nextInt();
                 main.findPrimeFactors(number);
                 break;
+            case Q2:
+                number = scanner.nextInt();
+                main.isLeapYear(number);
+                break;
 
         }
+    }
+
+    public void isLeapYear(int number) {
+        if (number < MIN_LEAP_YEAR_LIMIT) {
+            System.out.println("Invalid number");
+            return;
+        }
+        if ((number % FOUR == ZERO && number % CENTURY != ZERO) || (number % FOUR == ZERO && number % CENTURY == ZERO && number % FOUR_CENTURY == 0)) {
+            System.out.println("Leap Year");
+            return;
+        }
+        System.out.println("Non Leap Year");
     }
 
     public void findPrimeFactors(int number) {
