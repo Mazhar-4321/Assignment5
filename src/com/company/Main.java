@@ -13,6 +13,7 @@ public class Main {
     final static int Q6 = 6;
     final static int Q5 = 5;
     final static int Q2 = 2;
+    final static int Q4 = 4;
     final static int MIN_LEAP_YEAR_LIMIT = 1000;
     final static int FOUR = 4;
     final static int FOUR_CENTURY = 400;
@@ -25,7 +26,7 @@ public class Main {
         System.out.println("Basic Core Java Programs");
         Main main = new Main();
         System.out.println("Enter 1 for Flip Coin ,3 for Power of 2 ,7 for swap two numbers,8 for Even Or Odd ,9 for Alphabet is Vowel or Consonant" +
-                "10 for Largest Among Three Numbers,6 for Quotient And Remainder,5 for Prime factors 2 for Leap Year ");
+                "10 for Largest Among Three Numbers,6 for Quotient And Remainder,5 for Prime factors 2 for Leap Year 4 for Nth Harmonic Number ");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option) {
@@ -68,8 +69,25 @@ public class Main {
                 number = scanner.nextInt();
                 main.isLeapYear(number);
                 break;
+            case Q4:
+                number = scanner.nextInt();
+                main.printNthHarmonicNumber(number);
+                break;
 
         }
+    }
+
+    public void printNthHarmonicNumber(int number) {
+        if(number<OFFSET_VALUE){
+            System.out.println("Invalid Number");
+            return;
+        }
+        double nthHarmonicNumber = 1;
+        while (number >= OFFSET_VALUE) {
+            nthHarmonicNumber /= number;
+            number -= 1;
+        }
+        System.out.println("Nth Harmonic Number=" + nthHarmonicNumber);
     }
 
     public void isLeapYear(int number) {
