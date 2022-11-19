@@ -9,6 +9,7 @@ public class Main {
     final static int Q8 = 8;
     final static int Q9 = 9;
     final static int Q10 = 10;
+    final static int Q6 = 6;
     final int OFFSET_VALUE = 1;
     final int POWER_LIMIT = 30;
 
@@ -16,7 +17,7 @@ public class Main {
         System.out.println("Basic Core Java Programs");
         Main main = new Main();
         System.out.println("Enter 1 for Flip Coin ,3 for Power of 2 ,7 for swap two numbers,8 for Even Or Odd ,9 for Alphabet is Vowel or Consonant" +
-                " ");
+                "10 for Largest Among Three Numbers,6 for Quotient And Remainder ");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option) {
@@ -46,8 +47,17 @@ public class Main {
                 int secondNumber = scanner.nextInt();
                 int thirdNumber = scanner.nextInt();
                 main.findLargestAmongThreeNumbers(firstNumber, secondNumber, thirdNumber);
+                break;
+            case Q6:
+                int number = scanner.nextInt();
+                main.findQuotientAndRemainder(number);
+                break;
 
         }
+    }
+
+    public void findQuotientAndRemainder(int number) {
+        System.out.printf("Quotient=%d,Remainder=%d", number / 10, number % 10);
     }
 
     public void findLargestAmongThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
