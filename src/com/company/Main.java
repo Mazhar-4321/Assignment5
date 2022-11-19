@@ -7,13 +7,15 @@ public class Main {
     final static int Q3 = 3;
     final static int Q7 = 7;
     final static int Q8 = 8;
+    final static int Q9 = 9;
     final int OFFSET_VALUE = 1;
     final int POWER_LIMIT = 30;
 
     public static void main(String[] args) {
         System.out.println("Basic Core Java Programs");
         Main main = new Main();
-        System.out.println("Enter 1 for Flip Coin ,3 for Power of 2 ,7 for swap two numbers,8 for Even Or Odd  ");
+        System.out.println("Enter 1 for Flip Coin ,3 for Power of 2 ,7 for swap two numbers,8 for Even Or Odd ,9 for Alphabet is Vowel or Consonant" +
+                " ");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option) {
@@ -34,7 +36,26 @@ public class Main {
                 int evenOrOdd = scanner.nextInt();
                 main.isEven(evenOrOdd);
                 break;
+            case Q9:
+                char alphabet = scanner.next().toLowerCase().charAt(0);
+                main.isAlphabetVowel(alphabet);
+                break;
         }
+    }
+
+    public void isAlphabetVowel(char alphabet) {
+        String message = "Consonant";
+        switch (alphabet) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                message = "Vowel";
+            default:
+                break;
+        }
+        System.out.println("Alphabet is " + message);
     }
 
     public void findPercentageOfHeadAndTailsOfNFlipCoins(int flipNumber) {
