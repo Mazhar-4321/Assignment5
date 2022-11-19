@@ -10,6 +10,7 @@ public class Main {
     final static int Q9 = 9;
     final static int Q10 = 10;
     final static int Q6 = 6;
+    final static int Q5 = 5;
     final int OFFSET_VALUE = 1;
     final int POWER_LIMIT = 30;
 
@@ -17,7 +18,7 @@ public class Main {
         System.out.println("Basic Core Java Programs");
         Main main = new Main();
         System.out.println("Enter 1 for Flip Coin ,3 for Power of 2 ,7 for swap two numbers,8 for Even Or Odd ,9 for Alphabet is Vowel or Consonant" +
-                "10 for Largest Among Three Numbers,6 for Quotient And Remainder ");
+                "10 for Largest Among Three Numbers,6 for Quotient And Remainder,5 for Prime factors ");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option) {
@@ -52,7 +53,21 @@ public class Main {
                 int number = scanner.nextInt();
                 main.findQuotientAndRemainder(number);
                 break;
+            case Q5:
+                number = scanner.nextInt();
+                main.findPrimeFactors(number);
+                break;
 
+        }
+    }
+
+    public void findPrimeFactors(int number) {
+        int i = 1;
+        while (i * i <= number) {
+            if (number % i == 0) {
+                System.out.print(i + " ");
+            }
+            i += 1;
         }
     }
 
