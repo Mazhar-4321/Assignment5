@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     final int OFFSET_VALUE = 1;
+    final int POWER_LIMIT = 30;
 
     public static void main(String[] args) {
         System.out.println("Basic Core Java Programs");
@@ -12,6 +13,8 @@ public class Main {
         int flipNumber = scanner.nextInt();
         double[] headAndTailPercentage = main.findPercentageOfHeadAndTailsOfNFlipCoins(flipNumber);
         System.out.println("Head Percentage=" + headAndTailPercentage[0] + ",Tail Percentage=" + headAndTailPercentage[1]);
+        int N = scanner.nextInt();
+        main.printPowerOf2(N);
     }
 
     public double[] findPercentageOfHeadAndTailsOfNFlipCoins(int flipNumber) {
@@ -24,5 +27,15 @@ public class Main {
         headAndTailPercentage[0] = headAndTailPercentage[0] / count;
         headAndTailPercentage[1] = headAndTailPercentage[1] / count;
         return headAndTailPercentage;
+    }
+
+    public void printPowerOf2(int N) {
+        if (N > POWER_LIMIT) {
+            return;
+        }
+        int i = 0;
+        while (i++ != N) {
+            System.out.println((int) Math.pow(2, i));
+        }
     }
 }
