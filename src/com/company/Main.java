@@ -78,13 +78,13 @@ public class Main {
     }
 
     public void printNthHarmonicNumber(int number) {
-        if(number<OFFSET_VALUE){
+        if (number < OFFSET_VALUE) {
             System.out.println("Invalid Number");
             return;
         }
         double nthHarmonicNumber = 1;
         while (number >= OFFSET_VALUE) {
-            nthHarmonicNumber /= number;
+            nthHarmonicNumber += 1.0 / number;
             number -= 1;
         }
         System.out.println("Nth Harmonic Number=" + nthHarmonicNumber);
