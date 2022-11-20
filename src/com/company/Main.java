@@ -37,7 +37,12 @@ public class Main {
                 main.isEven(evenOrOdd);
                 break;
             case Q9:
-                char alphabet = scanner.next().toLowerCase().charAt(0);
+                String word=scanner.next().toLowerCase();
+                if(word.length()>1){
+                    System.out.println("Invalid Input");
+                    return;
+                }
+                char alphabet = word.charAt(0);
                 main.isAlphabetVowel(alphabet);
                 break;
         }
