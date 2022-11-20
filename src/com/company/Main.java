@@ -32,43 +32,53 @@ public class Main {
         int option = scanner.nextInt();
         switch (option) {
             case Q1:
+                main.message();
                 int number = scanner.nextInt();
                 main.printPercentageOfHeadAndTailsOfNFlipCoins(number);
                 break;
             case Q2:
+                main.message();
                 number = scanner.nextInt();
                 main.isLeapYear(number);
                 break;
             case Q3:
+                main.message();
                 number = scanner.nextInt();
                 main.printPowerOf2(number);
                 break;
             case Q4:
+                main.message();
                 number = scanner.nextInt();
                 main.printNthHarmonicNumber(number);
                 break;
             case Q5:
+                main.message();
                 number = scanner.nextInt();
                 main.printPrimeFactors(number);
                 break;
             case Q6:
+                main.message();
                 number = scanner.nextInt();
                 main.printQuotientAndRemainder(number);
                 break;
             case Q7:
+                System.out.println("Enter Two Numbers");
                 int num1 = scanner.nextInt();
                 int num2 = scanner.nextInt();
                 main.swapTwoNumbers(num1, num2);
                 break;
             case Q8:
+                main.message();
                 number = scanner.nextInt();
                 main.isEven(number);
                 break;
             case Q9:
+                System.out.println("Enter a Character");
                 char alphabet = scanner.next().toLowerCase().charAt(0);
                 main.isAlphabetVowel(alphabet);
                 break;
             case Q10:
+                System.out.println("Enter Three Numbers");
                 int firstNumber = scanner.nextInt();
                 int secondNumber = scanner.nextInt();
                 int thirdNumber = scanner.nextInt();
@@ -79,6 +89,10 @@ public class Main {
         }
     }
 
+    public void message() {
+        System.out.println("Enter a Number");
+    }
+
     public void printNthHarmonicNumber(int number) {
         if (number < OFFSET_VALUE) {
             System.out.println("Invalid Number");
@@ -86,7 +100,7 @@ public class Main {
         }
         double nthHarmonicNumber = 1;
         while (number >= OFFSET_VALUE) {
-            nthHarmonicNumber += 1 / number;
+            nthHarmonicNumber += 1.0 / number;
             number -= 1;
         }
         System.out.println("Nth Harmonic Number=" + nthHarmonicNumber);
@@ -119,8 +133,7 @@ public class Main {
     }
 
     public void printLargestAmongThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
-        System.out.printf("Third Largest Number among %d,%dand %d is %d", firstNumber, secondNumber, thirdNumber, firstNumber >= secondNumber
-                && firstNumber >= thirdNumber ? firstNumber : (secondNumber >= thirdNumber ? secondNumber : thirdNumber));
+        System.out.printf("Third Largest Number among %d,%dand %d is %d", firstNumber, secondNumber, thirdNumber, Math.max(firstNumber, Math.max(secondNumber, thirdNumber)));
     }
 
     public void isAlphabetVowel(char alphabet) {
@@ -171,6 +184,6 @@ public class Main {
     }
 
     public void isEven(int num) {
-        System.out.println("Even=" + (num % 2 == ZERO ? true : false));
+        System.out.println("Even=" + (num % 2 == ZERO));
     }
 }
