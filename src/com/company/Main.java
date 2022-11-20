@@ -74,6 +74,11 @@ public class Main {
                 break;
             case Q9:
                 System.out.println("Enter a Character");
+                String word = scanner.next().toLowerCase();
+                if (word.length() > 1) {
+                    System.out.println("Invalid Input");
+                    return;
+                }
                 char alphabet = scanner.next().toLowerCase().charAt(0);
                 main.isAlphabetVowel(alphabet);
                 break;
