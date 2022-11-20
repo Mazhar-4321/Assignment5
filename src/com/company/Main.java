@@ -19,24 +19,41 @@ public class Main {
     final static int FOUR_CENTURY = 400;
     final static int ZERO = 0;
     final static int CENTURY = 100;
-    final int OFFSET_VALUE = 1;
-    final int POWER_LIMIT = 30;
+    final static int OFFSET_VALUE = 1;
+    final static int POWER_LIMIT = 30;
 
     public static void main(String[] args) {
         System.out.println("Basic Core Java Programs");
         Main main = new Main();
-        System.out.println("Enter 1 for Flip Coin ,3 for Power of 2 ,7 for swap two numbers,8 for Even Or Odd ,9 for Alphabet is Vowel or Consonant" +
-                "10 for Largest Among Three Numbers,6 for Quotient And Remainder,5 for Prime factors 2 for Leap Year 4 for Nth Harmonic Number ");
+        System.out.println("Enter 1 for Flip Coin ,2 for Leap Year,3 for Power of 2 ,4 for Nth Harmonic Number,5 for Prime factors,6 for Quotient And Remainder, " +
+                "7 for swap two numbers,8 for Even Or Odd ,9 for Alphabet is Vowel or Consonant" +
+                "10 for Largest Among Three Numbers  ");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch (option) {
             case Q1:
-                int flipNumber = scanner.nextInt();
-                main.findPercentageOfHeadAndTailsOfNFlipCoins(flipNumber);
+                int number = scanner.nextInt();
+                main.printPercentageOfHeadAndTailsOfNFlipCoins(number);
+                break;
+            case Q2:
+                number = scanner.nextInt();
+                main.isLeapYear(number);
                 break;
             case Q3:
-                int N = scanner.nextInt();
-                main.printPowerOf2(N);
+                number = scanner.nextInt();
+                main.printPowerOf2(number);
+                break;
+            case Q4:
+                number = scanner.nextInt();
+                main.printNthHarmonicNumber(number);
+                break;
+            case Q5:
+                number = scanner.nextInt();
+                main.printPrimeFactors(number);
+                break;
+            case Q6:
+                number = scanner.nextInt();
+                main.printQuotientAndRemainder(number);
                 break;
             case Q7:
                 int num1 = scanner.nextInt();
@@ -44,8 +61,8 @@ public class Main {
                 main.swapTwoNumbers(num1, num2);
                 break;
             case Q8:
-                int evenOrOdd = scanner.nextInt();
-                main.isEven(evenOrOdd);
+                number = scanner.nextInt();
+                main.isEven(number);
                 break;
             case Q9:
                 char alphabet = scanner.next().toLowerCase().charAt(0);
@@ -55,24 +72,9 @@ public class Main {
                 int firstNumber = scanner.nextInt();
                 int secondNumber = scanner.nextInt();
                 int thirdNumber = scanner.nextInt();
-                main.findLargestAmongThreeNumbers(firstNumber, secondNumber, thirdNumber);
+                main.printLargestAmongThreeNumbers(firstNumber, secondNumber, thirdNumber);
                 break;
-            case Q6:
-                int number = scanner.nextInt();
-                main.findQuotientAndRemainder(number);
-                break;
-            case Q5:
-                number = scanner.nextInt();
-                main.findPrimeFactors(number);
-                break;
-            case Q2:
-                number = scanner.nextInt();
-                main.isLeapYear(number);
-                break;
-            case Q4:
-                number = scanner.nextInt();
-                main.printNthHarmonicNumber(number);
-                break;
+
 
         }
     }
@@ -84,7 +86,7 @@ public class Main {
         }
         double nthHarmonicNumber = 1;
         while (number >= OFFSET_VALUE) {
-            nthHarmonicNumber /= number;
+            nthHarmonicNumber += 1 / number;
             number -= 1;
         }
         System.out.println("Nth Harmonic Number=" + nthHarmonicNumber);
@@ -102,7 +104,7 @@ public class Main {
         System.out.println("Non Leap Year");
     }
 
-    public void findPrimeFactors(int number) {
+    public void printPrimeFactors(int number) {
         int i = 1;
         while (i * i <= number) {
             if (number % i == ZERO) {
@@ -112,11 +114,11 @@ public class Main {
         }
     }
 
-    public void findQuotientAndRemainder(int number) {
+    public void printQuotientAndRemainder(int number) {
         System.out.printf("Quotient=%d,Remainder=%d", number / 10, number % 10);
     }
 
-    public void findLargestAmongThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+    public void printLargestAmongThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
         System.out.printf("Third Largest Number among %d,%dand %d is %d", firstNumber, secondNumber, thirdNumber, firstNumber >= secondNumber
                 && firstNumber >= thirdNumber ? firstNumber : (secondNumber >= thirdNumber ? secondNumber : thirdNumber));
     }
@@ -136,7 +138,7 @@ public class Main {
         System.out.println("Alphabet is " + message);
     }
 
-    public void findPercentageOfHeadAndTailsOfNFlipCoins(int flipNumber) {
+    public void printPercentageOfHeadAndTailsOfNFlipCoins(int flipNumber) {
         if (flipNumber < OFFSET_VALUE) {
             System.out.println("Invalid Number");
             return;
