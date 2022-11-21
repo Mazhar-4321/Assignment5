@@ -84,8 +84,6 @@ public class Main {
                 int thirdNumber = scanner.nextInt();
                 main.printLargestAmongThreeNumbers(firstNumber, secondNumber, thirdNumber);
                 break;
-
-
         }
     }
 
@@ -141,7 +139,7 @@ public class Main {
             System.out.println("Invalid Input");
             return;
         }
-        char alphabet = input.toLowerCase().charAt(0);
+        char alphabet = input.charAt(0);
         String message = "Consonant";
         switch (alphabet) {
             case 'a':
