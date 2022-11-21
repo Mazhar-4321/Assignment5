@@ -75,12 +75,7 @@ public class Main {
             case Q9:
                 System.out.println("Enter a Character");
                 String word = scanner.next().toLowerCase();
-                if (word.length() > 1) {
-                    System.out.println("Invalid Input");
-                    return;
-                }
-                char alphabet = word.charAt(0);
-                main.isAlphabetVowel(alphabet);
+                main.isAlphabetVowel(word);
                 break;
             case Q10:
                 System.out.println("Enter Three Numbers");
@@ -141,7 +136,12 @@ public class Main {
         System.out.printf("Third Largest Number among %d,%dand %d is %d", firstNumber, secondNumber, thirdNumber, Math.max(firstNumber, Math.max(secondNumber, thirdNumber)));
     }
 
-    public void isAlphabetVowel(char alphabet) {
+    public void isAlphabetVowel(String input) {
+        if (input.length() > 1) {
+            System.out.println("Invalid Input");
+            return;
+        }
+        char alphabet = input.toLowerCase().charAt(0);
         String message = "Consonant";
         switch (alphabet) {
             case 'a':
