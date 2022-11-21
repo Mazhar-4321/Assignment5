@@ -79,7 +79,7 @@ public class Main {
                     System.out.println("Invalid Input");
                     return;
                 }
-                char alphabet = scanner.next().toLowerCase().charAt(0);
+                char alphabet = word.charAt(0);
                 main.isAlphabetVowel(alphabet);
                 break;
             case Q10:
